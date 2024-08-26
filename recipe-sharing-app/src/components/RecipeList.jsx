@@ -1,14 +1,14 @@
-import AddToFavoritesButton from "./AddToFavoritesButton";
 import useRecipeStore from "./recipeStore";
 import { Link } from "react-router-dom";
+import AddToFavoritesButton from "./AddToFavoritesButton";
 import RemoveFromFavoritesButton from "./RemoveFromFavoritesButton";
 
 const RecipeList = () => {
-    const filteredRecipes = useRecipeStore(state => state.filteredRecipes);
+    const recipes = useRecipeStore(state => state.recipes);
 
     return (
         <div>
-            {filteredRecipes.map(recipe => {
+            {recipes.map(recipe => {
                 const {id, title, description} = recipe;
                 return (
                     <div key={id}>
